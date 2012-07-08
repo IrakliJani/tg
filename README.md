@@ -17,6 +17,10 @@ simple CLI tool
 
     $ tg
 
+## Screenshot
+
+![tg](http://dl.dropbox.com/u/21559849/tg/tg.png)
+
 ## Contributing
 
 1. Fork it
