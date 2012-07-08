@@ -1,0 +1,29 @@
+#!/usr/bin/env ruby
+# -*- encoding: utf-8 -*-
+
+require 'tg'
+
+tg = Tg::Tg.new
+
+begin
+	if ARGV[0].nil?
+		loop do
+			text = Readline::readline('> '.color :green)
+
+			raise Interrupt if text == '\q'
+			Readline::HISTORY.push text
+
+			tg.translate text
+		end
+	else
+		text = ARGV[0]
+
+		tg.translate text
+	end
+rescue Interrupt
+	puts 'exiting...'
+rescue Exception => e
+	print 'Error:'.color(:white).background(:red)
+	print ' '
+	puts e
+end
